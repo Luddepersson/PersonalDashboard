@@ -61,6 +61,15 @@ export default function RegisterPage() {
           <Link href="/login" className="text-[#2e94be] font-medium hover:text-[#2480a6] transition-colors">Logga in</Link>
         </p>
       </div>
+
+      <div className="mt-5 text-center">
+        <Link
+          href="/demo"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium text-[#2e94be] bg-[#2e94be]/8 border border-[#2e94be]/15 hover:bg-[#2e94be]/15 hover:border-[#2e94be]/25 transition-all"
+        >
+          Utforska demo-versionen →
+        </Link>
+      </div>
     </div>
   );
 }

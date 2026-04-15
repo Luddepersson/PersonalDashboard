@@ -122,14 +122,17 @@ function DemoContent() {
       </aside>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 py-3 flex items-center justify-between" style={{ background: "var(--sidebar-bg)", backdropFilter: "blur(20px)" }}>
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 px-4 py-2.5 flex items-center justify-between border-b border-white/5" style={{ background: "var(--sidebar-bg)", backdropFilter: "blur(24px)" }}>
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-accent to-accent-secondary flex items-center justify-center shadow-sm">
             <span className="text-white font-bold text-[10px]">PD</span>
           </div>
-          <span className="text-sm font-semibold text-foreground">Demo</span>
+          <div>
+            <span className="text-sm font-semibold text-foreground block leading-tight">Dashboard</span>
+            <span className="text-[9px] text-fg-tertiary">Demo</span>
+          </div>
         </div>
-        <Link href="/register" className="btn-primary !py-1.5 !px-3 !text-xs !rounded-lg">
+        <Link href="/register" className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-accent to-accent-secondary shadow-[0_2px_10px_rgba(46,148,190,0.25)] hover:shadow-[0_4px_15px_rgba(46,148,190,0.35)] transition-all active:scale-95">
           Skapa konto
         </Link>
       </div>

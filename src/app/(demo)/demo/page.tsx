@@ -122,7 +122,7 @@ function DemoContent() {
       </aside>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 px-4 py-3 flex items-center justify-between" style={{ background: "var(--sidebar-bg)", backdropFilter: "blur(20px)" }}>
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 px-3 sm:px-4 py-3 flex items-center justify-between" style={{ background: "var(--sidebar-bg)", backdropFilter: "blur(20px)" }}>
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-accent flex items-center justify-center">
             <span className="text-white font-bold text-[10px]">PD</span>
@@ -189,7 +189,7 @@ function DemoContent() {
         </div>
 
         {/* Feature highlights */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-6">
+        <div className="grid grid-cols-1 min-[400px]:grid-cols-2 md:grid-cols-4 gap-2 mb-6">
           {[
             { label: "35+ Widgets", desc: "Fullt anpassningsbar" },
             { label: "5 Teman", desc: "Gradient glassmorphism" },

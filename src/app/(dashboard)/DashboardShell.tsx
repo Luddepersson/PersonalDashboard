@@ -48,6 +48,9 @@ export default function DashboardShell({ children, user }: Props) {
 
   return (
     <ThemeProvider defaultTheme={user?.theme || "emerald-chrome"}>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:rounded-xl focus:bg-accent focus:text-white focus:text-sm">
+        Gå till huvudinnehåll
+      </a>
       <ServiceWorkerRegistrar />
       <ParticlesBackground />
 
@@ -78,17 +81,17 @@ export default function DashboardShell({ children, user }: Props) {
         <Sidebar userName={user?.name || undefined} />
         <CommandPalette />
 
-        <main className="ml-0 lg:ml-[230px] transition-all duration-300 min-h-screen px-2 pt-14 pb-4 sm:px-5 sm:pt-16 sm:pb-6 lg:pt-5 lg:px-7 lg:pb-8">
+        <main id="main-content" className="ml-0 lg:ml-[230px] transition-all duration-300 min-h-screen px-2 pt-14 pb-4 sm:px-5 sm:pt-16 sm:pb-6 lg:pt-5 lg:px-7 lg:pb-8">
           {/* Top bar — responsive: wraps on mobile */}
           <div className="relative flex items-center justify-end gap-1 sm:gap-1.5 mb-3 sm:mb-5 flex-wrap z-20">
-            <button onClick={() => setFocusMode(true)} className="btn-ghost p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-fg-tertiary hover:text-accent" title="Fokusläge (F)">
+            <button onClick={() => setFocusMode(true)} className="btn-ghost p-1.5 sm:p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg sm:rounded-xl text-fg-tertiary hover:text-accent" title="Fokusläge (F)" aria-label="Fokusläge">
               <Crosshair size={15} />
             </button>
-            <button onClick={() => setSleepMode(true)} className="btn-ghost p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-fg-tertiary hover:text-accent" title="Viloläge (S)">
+            <button onClick={() => setSleepMode(true)} className="btn-ghost p-1.5 sm:p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg sm:rounded-xl text-fg-tertiary hover:text-accent" title="Viloläge (S)" aria-label="Viloläge">
               <Moon size={15} />
             </button>
             <CastButton />
-            <button onClick={() => setShowShortcuts(true)} className="hidden sm:flex btn-ghost p-2 rounded-xl text-fg-tertiary hover:text-accent" title="Genvägar (?)">
+            <button onClick={() => setShowShortcuts(true)} className="hidden sm:flex btn-ghost p-2 min-w-[44px] min-h-[44px] items-center justify-center rounded-xl text-fg-tertiary hover:text-accent" title="Genvägar (?)" aria-label="Hjälp och genvägar">
               <HelpCircle size={15} />
             </button>
             <NotificationBell />

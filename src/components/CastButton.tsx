@@ -85,7 +85,7 @@ export default function CastButton() {
       <button
         onClick={() => setOpen(!open)}
         className="focus-ring p-2 rounded-xl bg-white/10 backdrop-blur border border-white/10 text-[var(--foreground-secondary)] hover:text-[var(--accent)] hover:bg-white/15 hover:border-[var(--accent)]/20 transition-all shadow-sm"
-        aria-label="Casta sida"
+        aria-label="Casta dashboard till TV"
         title="Casta till TV (Chromecast / AirPlay)"
       >
         <Cast size={15} className={casting ? "text-accent" : ""} />
@@ -93,7 +93,8 @@ export default function CastButton() {
 
       {open && (
         <div
-          className="absolute right-0 top-full mt-2 w-[260px] p-3 rounded-2xl backdrop-blur-3xl border shadow-[0_16px_48px_rgba(0,0,0,0.2)] animate-in z-50"
+          className="absolute right-0 top-full mt-2 w-[260px] max-w-[calc(100vw-2rem)] p-3 rounded-2xl backdrop-blur-3xl border shadow-[0_16px_48px_rgba(0,0,0,0.2)] animate-in z-50"
+          role="menu"
           style={{ background: "var(--glass-bg)", borderColor: "var(--glass-border)" }}
         >
           <p className="text-xs font-semibold mb-2.5 px-1 text-foreground">Casta dashboard</p>

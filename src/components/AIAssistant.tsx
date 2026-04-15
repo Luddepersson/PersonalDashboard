@@ -115,6 +115,7 @@ export function JarvisFloating() {
             exit={{ scale: 0, opacity: 0 }}
             onClick={() => setIsOpen(true)}
             className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-[80] w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#2e94be] via-[#4cb4d8] to-[#6aafc8] text-white flex items-center justify-center shadow-[0_8px_30px_rgba(46,148,190,0.35)] hover:shadow-[0_12px_40px_rgba(46,148,190,0.45)] hover:scale-105 active:scale-95 transition-all"
+            aria-label="Öppna AI-assistent"
           >
             <Sparkles size={22} />
           </motion.button>
@@ -198,12 +199,12 @@ function JarvisChat({ onClose, isExpanded, onToggleExpand, embedded }: {
         {!embedded && (
           <div className="flex items-center gap-1">
             {onToggleExpand && (
-              <button onClick={onToggleExpand} className="btn-ghost p-1.5 rounded-lg">
+              <button onClick={onToggleExpand} className="btn-ghost p-1.5 rounded-lg" aria-label={isExpanded ? "Minimera chatt" : "Expandera chatt"}>
                 {isExpanded ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
               </button>
             )}
             {onClose && (
-              <button onClick={onClose} className="btn-ghost p-1.5 rounded-lg">
+              <button onClick={onClose} className="btn-ghost p-1.5 rounded-lg" aria-label="Stäng AI-assistent">
                 <X size={14} />
               </button>
             )}
@@ -279,6 +280,7 @@ function JarvisChat({ onClose, isExpanded, onToggleExpand, embedded }: {
             onChange={(e) => setInput(e.target.value)}
             className="input-base flex-1 !py-2.5"
             placeholder="Fråga Jarvis..."
+            aria-label="Meddelande till Jarvis"
           />
           <button type="submit" disabled={!input.trim()} className="btn-primary !p-2.5 !rounded-xl disabled:opacity-30">
             <Send size={15} />

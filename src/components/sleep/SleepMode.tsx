@@ -72,6 +72,8 @@ export default function SleepMode({ isActive, onExit }: SleepModeProps) {
           transition={{ duration: 1.2 }}
           onClick={handleExit}
           className="fixed inset-0 z-[200] cursor-pointer overflow-hidden select-none"
+          role="dialog"
+          aria-label="Viloläge"
           style={{ backgroundColor: "#050810" }}
         >
           {/* Background crossfade — two layers, opacity transition */}

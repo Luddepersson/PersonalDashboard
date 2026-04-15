@@ -197,7 +197,7 @@ export default function Sidebar({ userName }: SidebarProps) {
   return (
     <>
       {/* Mobile toggle */}
-      <button onClick={() => setMobileOpen(true)} className="lg:hidden fixed top-3 left-3 z-[60] p-2.5 rounded-xl bg-white/30 backdrop-blur-xl border border-white/30 shadow-sm text-fg-secondary min-w-[44px] min-h-[44px] flex items-center justify-center">
+      <button onClick={() => setMobileOpen(true)} className="lg:hidden fixed top-3 left-3 z-[60] p-2.5 rounded-xl bg-white/30 backdrop-blur-xl border border-white/30 shadow-sm text-fg-secondary min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Öppna sidomenyn" aria-expanded={mobileOpen}>
         <Menu size={18} />
       </button>
 
@@ -222,10 +222,12 @@ export default function Sidebar({ userName }: SidebarProps) {
             animate={{ x: 0 }}
             exit={{ x: -260 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="lg:hidden fixed left-0 top-0 h-screen z-[60] w-[260px]"
+            className="lg:hidden fixed left-0 top-0 h-screen z-[60] w-[260px] max-w-[85vw]"
+            role="dialog"
+            aria-label="Navigationsmeny"
           >
             <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl border-r border-white/30" />
-            <button onClick={() => setMobileOpen(false)} className="absolute top-4 right-3 btn-ghost p-1.5 z-10"><X size={16} /></button>
+            <button onClick={() => setMobileOpen(false)} className="absolute top-4 right-3 btn-ghost p-1.5 min-w-[44px] min-h-[44px] flex items-center justify-center z-10" aria-label="Stäng sidomenyn"><X size={18} /></button>
             <div className="relative h-full flex flex-col py-5">
               <div className="flex items-center gap-3 px-5 mb-6">
                 <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2e94be] via-[#4cb4d8] to-[#6aafc8] flex items-center justify-center shadow-[0_2px_10px_rgba(46,148,190,0.2)]">
@@ -248,6 +250,8 @@ export default function Sidebar({ userName }: SidebarProps) {
         animate={{ width: collapsed ? 60 : 230 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className={`hidden lg:block fixed left-0 top-0 h-screen z-50`}
+        role="navigation"
+        aria-label="Huvudnavigation"
       >
         <div className="absolute inset-0 backdrop-blur-3xl border-r border-white/20" style={{ background: "var(--sidebar-bg)" }} />
         <div className="relative h-full flex flex-col py-5">
@@ -273,7 +277,8 @@ export default function Sidebar({ userName }: SidebarProps) {
         {/* Collapse toggle */}
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-surface-elevated border border-separator flex items-center justify-center text-fg-tertiary hover:text-accent shadow-sm transition-colors"
+          className="absolute -right-3 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-6 sm:h-6 rounded-full bg-surface-elevated border border-separator flex items-center justify-center text-fg-tertiary hover:text-accent shadow-sm transition-colors"
+          aria-label={collapsed ? "Expandera sidomenyn" : "Minimera sidomenyn"}
         >
           {collapsed ? <ChevronRight size={11} /> : <ChevronLeft size={11} />}
         </button>

@@ -51,10 +51,10 @@ export default function CommandPalette() {
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[18vh]">
       <div className="absolute inset-0 bg-[#1a2b3c]/15 backdrop-blur-sm" onClick={() => setOpen(false)} />
-      <div className="relative w-full max-w-md mx-4 rounded-2xl bg-white/70 backdrop-blur-2xl border border-white/50 shadow-[0_16px_64px_rgba(56,163,201,0.12)] overflow-hidden animate-in">
+      <div className="relative w-full max-w-md mx-2 sm:mx-4 rounded-2xl bg-white/70 backdrop-blur-2xl border border-white/50 shadow-[0_16px_64px_rgba(56,163,201,0.12)] overflow-hidden animate-in" role="dialog" aria-label="Sök sidor">
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-[#a8d4e6]/15">
           <Search size={16} className="text-accent/50 shrink-0" />
-          <input ref={inputRef} type="text" placeholder="Sök sidor..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown} className="flex-1 bg-transparent text-sm text-[#1a2b3c] placeholder-[#1a2b3c]/30 focus:outline-none" />
+          <input ref={inputRef} type="text" placeholder="Sök sidor..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown} className="flex-1 bg-transparent text-sm text-[#1a2b3c] placeholder-[#1a2b3c]/30 focus:outline-none py-1" aria-label="Sök sidor" />
           <kbd className="hidden sm:block px-2 py-0.5 rounded-md text-[10px] text-[#1a2b3c]/25 bg-[#a8d4e6]/10 font-mono">esc</kbd>
         </div>
         <div className="max-h-[300px] overflow-y-auto p-2">

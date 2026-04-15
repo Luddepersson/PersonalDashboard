@@ -36,18 +36,18 @@ export default function RegisterPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {error && <div className="text-sm text-red-600 bg-red-50/60 backdrop-blur rounded-xl px-4 py-2.5 text-center border border-red-200/30">{error}</div>}
+        {error && <div className="text-sm text-red-600 bg-red-50/60 backdrop-blur rounded-xl px-4 py-2.5 text-center border border-red-200/30" role="alert">{error}</div>}
         <div>
-          <label className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">Namn</label>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} placeholder="Ditt namn" required />
+          <label htmlFor="register-name" className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">Namn</label>
+          <input id="register-name" type="text" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} placeholder="Ditt namn" required />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">E-post</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="din@email.se" required />
+          <label htmlFor="register-email" className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">E-post</label>
+          <input id="register-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder="din@email.se" required />
         </div>
         <div>
-          <label className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">Lösenord</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Minst 6 tecken" required minLength={6} />
+          <label htmlFor="register-password" className="block text-[10px] font-semibold text-[#0f1c2e]/45 mb-1.5 uppercase tracking-[0.1em]">Lösenord</label>
+          <input id="register-password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} className={inputCls} placeholder="Minst 6 tecken" required minLength={6} />
         </div>
         <button type="submit" disabled={loading}
           className="w-full py-3 rounded-xl bg-gradient-to-r from-[#2e94be] to-[#6aafc8] text-white text-sm font-medium shadow-[0_6px_25px_rgba(46,148,190,0.3),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_8px_35px_rgba(46,148,190,0.4)] disabled:opacity-50 transition-all hover:-translate-y-0.5 active:translate-y-0">

@@ -28,7 +28,7 @@ export default function ThemeToggle() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-2 w-[220px] p-3 rounded-2xl backdrop-blur-3xl border shadow-[0_16px_48px_rgba(0,0,0,0.2)] animate-in z-50"
+        <div className="absolute right-0 top-full mt-2 w-[220px] max-w-[90vw] p-3 rounded-2xl backdrop-blur-3xl border shadow-[0_16px_48px_rgba(0,0,0,0.2)] animate-in z-50" role="menu"
           style={{ background: "var(--glass-bg)", borderColor: "var(--glass-border)" }}
         >
           <p className="text-xs font-semibold mb-2.5 px-1" style={{ color: "var(--foreground-secondary)" }}>Välj tema</p>

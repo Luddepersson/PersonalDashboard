@@ -185,12 +185,13 @@ export default function NotificationBell() {
       {/* Bell button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="btn-ghost relative p-2 rounded-xl transition-colors"
+        className="btn-ghost relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl transition-colors"
         aria-label="Notifikationer"
+        aria-expanded={isOpen}
       >
         <Bell size={18} className="text-fg-secondary" />
         {unreadCount > 0 && (
-          <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 min-w-[18px] h-[18px] flex items-center justify-center rounded-full bg-accent text-[9px] font-bold text-white leading-none">
+          <span className="absolute -top-0.5 -right-0.5 w-4.5 h-4.5 min-w-[18px] h-[18px] flex items-center justify-center rounded-full bg-accent text-[10px] sm:text-[9px] font-bold text-white leading-none">
             {unreadCount > 99 ? "99+" : unreadCount}
           </span>
         )}
@@ -198,7 +199,7 @@ export default function NotificationBell() {
 
       {/* Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-80 max-h-[420px] flex flex-col bg-white/15 backdrop-blur-3xl border border-white/25 rounded-2xl shadow-2xl overflow-hidden z-[200]">
+        <div className="absolute right-0 top-full mt-2 w-80 max-w-[90vw] max-h-[420px] flex flex-col bg-white/15 backdrop-blur-3xl border border-white/25 rounded-2xl shadow-2xl overflow-hidden z-[200]" role="dialog" aria-label="Notifikationer">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
             <h3 className="text-sm font-semibold text-foreground">
@@ -264,7 +265,8 @@ export default function NotificationBell() {
                       </div>
                       <button
                         onClick={() => dismissNotification(n.id)}
-                        className="opacity-0 group-hover:opacity-100 btn-ghost p-1 rounded-lg text-fg-tertiary hover:text-accent-warm transition-all shrink-0"
+                        className="sm:opacity-0 sm:group-hover:opacity-100 btn-ghost p-1 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 sm:p-1 flex items-center justify-center rounded-lg text-fg-tertiary hover:text-accent-warm transition-all shrink-0"
+                        aria-label={`Ta bort notifikation: ${n.title}`}
                       >
                         <X size={11} />
                       </button>
